@@ -1,0 +1,32 @@
+[
+  {
+    "file": "data/economics_finance.csv",
+    "field": "Economics & Finance",
+    "count": 50
+  },
+  {
+    "file": "data/marketing_consumer_research.csv",
+    "field": "Marketing & Consumer Research",
+    "count": 51
+  },
+  {
+    "file": "data/medicine.csv",
+    "field": "Medicine",
+    "count": 44
+  },
+  {
+    "file": "data/neuroscience.csv",
+    "field": "Neuroscience",
+    "count": 429
+  },
+  {
+    "file": "data/political_science.csv",
+    "field": "Political Science",
+    "count": 49
+  },
+  {
+    "file": "data/psychology.csv",
+    "field": "Psychology",
+    "count": 55
+  }
+]

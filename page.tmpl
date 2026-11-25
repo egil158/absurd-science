@@ -8,7 +8,6 @@
 <div class="filters"><input id="query" type="search" aria-label="Search papers" placeholder="Search titles or journals"><select id="sub" aria-label="Subfield"><option value="">All subfields</option></select><select id="topic" aria-label="Topic"><option value="">All topics</option></select></div>
 <div class="section"><h2 id="view-title">Top 20</h2><span id="count" aria-live="polite"></span></div>
 <ul id="list">__CARDS__</ul><p class="empty" hidden>No matching papers.</p>
-<footer>Headlines are editorial summaries, not literal paper titles. Inclusion does not establish replication failure. <a href="editor.html">Edit data</a><details><summary>Download source CSVs</summary><div class="downloads">__DOWNLOADS__</div></details></footer>
 </main><script>
 const q=s=>document.querySelector(s),entries=[...document.querySelectorAll('.entry')],buttons=[...document.querySelectorAll('.group')],TOP='__top20__';const sub=q('#sub'),topic=q('#topic'),query=q('#query');let field=TOP;const cached=new Map(entries.map(c=>[c,[c.textContent,c.dataset.title,c.dataset.sub,c.dataset.topic].join(' ').toLowerCase()]));
 function options(el,label,values){const old=el.value;el.replaceChildren(new Option(label,''));for(const v of [...new Set(values)].sort((a,b)=>a.localeCompare(b)))el.add(new Option(v,v));if(values.includes(old))el.value=old;}

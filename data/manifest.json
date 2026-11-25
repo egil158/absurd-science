@@ -7,17 +7,17 @@
   {
     "file": "data/marketing_consumer_research.csv",
     "field": "Marketing & Consumer Research",
-    "count": 75
+    "count": 76
   },
   {
     "file": "data/medicine.csv",
     "field": "Medicine",
-    "count": 98
+    "count": 83
   },
   {
     "file": "data/neuroscience.csv",
     "field": "Neuroscience",
-    "count": 429
+    "count": 428
   },
   {
     "file": "data/political_science.csv",

@@ -17,7 +17,7 @@
   {
     "file": "data/neuroscience.csv",
     "field": "Neuroscience",
-    "count": 428
+    "count": 470
   },
   {
     "file": "data/political_science.csv",
@@ -27,6 +27,6 @@
   {
     "file": "data/psychology.csv",
     "field": "Psychology",
-    "count": 388
+    "count": 430
   }
 ]

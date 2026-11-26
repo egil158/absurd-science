@@ -2,7 +2,7 @@
   {
     "file": "data/economics_finance.csv",
     "field": "Economics & Finance",
-    "count": 92
+    "count": 104
   },
   {
     "file": "data/marketing_consumer_research.csv",
@@ -17,12 +17,12 @@
   {
     "file": "data/neuroscience.csv",
     "field": "Neuroscience",
-    "count": 470
+    "count": 489
   },
   {
     "file": "data/political_science.csv",
     "field": "Political Science",
-    "count": 106
+    "count": 124
   },
   {
     "file": "data/psychology.csv",

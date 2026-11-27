@@ -12,12 +12,12 @@
   {
     "file": "data/medicine.csv",
     "field": "Medicine",
-    "count": 78
+    "count": 77
   },
   {
     "file": "data/neuroscience.csv",
     "field": "Neuroscience",
-    "count": 506
+    "count": 500
   },
   {
     "file": "data/political_science.csv",
@@ -27,11 +27,11 @@
   {
     "file": "data/psychology.csv",
     "field": "Psychology",
-    "count": 883
+    "count": 871
   },
   {
     "file": "data/replication_across_fields.csv",
     "field": "Large-Scale Empirical Crisis",
-    "count": 25
+    "count": 23
   }
 ]

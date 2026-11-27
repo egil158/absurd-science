@@ -15,6 +15,10 @@ field,sub,topic,headline,title,venue,year,url,note,featured_rank
 - Add an entire discipline by creating a new CSV with the same header and a unique `field` name. The build detects it automatically. Save as UTF-8 CSV. Quote commas, quotes and line breaks using normal CSV rules.
 - The build checks required fields, URL formats, duplicate source URLs, field consistency, a 1,000-entry limit per discipline, and duplicate ranks. It does not verify bibliographic facts or replication claims.
 
+## Empirical Crisis
+
+The seventh category lists empirical replication and reanalysis projects. Its `sub` column records the discipline, `topic` describes the study design, and `note` gives the scope and outcome shown on the website. Preserve each project’s denominator and success criterion. An entry can report successful, mixed, or weak replication. Large collaborative tests of an individual effect are labeled multilab replications.
+
 ## Editing options
 
 1. **Local**: open any CSV in Excel, VS Code, or Python and save it back to `data/`.
@@ -33,7 +37,7 @@ If you prefer **Deploy from a branch**, select `main` / `(root)` in Pages settin
 
 ## Notes and editorial scope
 
-The current archive excludes explicitly methodological demonstrations, deliberately satirical papers, and selected follow-up or review papers. It focuses on original empirical research with unusual claims or interpretations. The Top 20 is editorial, not a ranking of research validity. Inclusion is not a determination that a paper failed replication. Added records were checked against publication pages or bibliographic/abstract records, not systematically against full text; inherited records were not comprehensively reverified. The public page displays only clickable editorial headlines and journal names, with filters by discipline, subfield, topic and keyword. All matching entries are displayed as a compact list. Original titles, years and notes remain in the CSV/editor. All data remain in the CSV files. The 1,000-entry limit is a technical capacity, not a claim about the current number of curated cases.
+The current archive excludes explicitly methodological demonstrations, deliberately satirical papers, and selected follow-up or review papers. It focuses on original empirical research with unusual claims or interpretations. The Top 20 is editorial, not a ranking of research validity. Inclusion is not a determination that a paper failed replication. Added records were checked against publication pages or bibliographic/abstract records, not systematically against full text; inherited records were not comprehensively reverified. The six discipline categories display clickable editorial headlines and journal names, with filters by discipline, subfield, topic and keyword. All matching entries are displayed as a compact list. Original titles, years and notes remain in the CSV/editor. All data remain in the CSV files. The 1,000-entry limit is a technical capacity, not a claim about the current number of curated cases.
 
 ## Minimal list edition
 

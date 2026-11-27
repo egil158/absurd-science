@@ -10,6 +10,7 @@ from urllib.parse import urlparse
 ROOT = Path(__file__).resolve().parent
 COLUMNS = ['field','sub','topic','headline','title','venue','year','url','note','featured_rank']
 TOP = '__top20__'
+EMPIRICAL_CRISIS = 'Empirical Crisis'
 e = lambda value: escape(str(value), quote=True)
 
 def read_cases():
@@ -49,16 +50,31 @@ def read_cases():
             fields.add(field); cases.extend(rows)
             manifest.append({'file': 'data/'+path.name,'field':field,'count':len(rows)})
     if not cases: raise ValueError('No cases in data/*.csv')
+    normalize_tags(cases)
     if len(ranks) != 20: print(f'Warning: {len(ranks)} of 20 featured ranks assigned')
     return cases, manifest
+
+def normalize_tags(cases):
+    for column in ('sub', 'topic'):
+        spellings = Counter(case[column] for case in cases)
+        preferred = {}
+        for label, _ in spellings.most_common():
+            preferred.setdefault(label.lower(), label)
+        for case in cases:
+            case[column] = preferred[case[column].lower()]
 
 def anchor(case):
     return 'paper-' + hashlib.sha256(case['url'].encode()).hexdigest()[:12]
 
 def render(case):
     fields = {k: e(v) for k,v in case.items()}
+    headline = '<a href="{url}" target="_blank" rel="noopener noreferrer">{headline}</a>'
+    venue = '<span class="venue">{venue}</span>'
+    if case['field'] == EMPIRICAL_CRISIS:
+        headline = '<div>' + headline + '<p class="study-result">{note}</p></div>'
+        venue = '<span class="venue">{venue} · {year}<br>{sub} · {topic}</span>'
     return ('<li id="{anchor}" class="entry" data-field="{field}" data-sub="{sub}" data-topic="{topic}" data-rank="{featured_rank}" data-title="{title}">'
-            '<a href="{url}" target="_blank" rel="noopener noreferrer">{headline}</a><span class="venue">{venue}</span></li>').format(**fields, anchor=anchor(case))
+            + headline + venue + '</li>').format(**fields, anchor=anchor(case))
 
 def button(field, name, n):
     return f'<button type="button" class="group" data-field="{e(field)}">{e(name)} <small>{n}</small></button>'
@@ -70,6 +86,7 @@ def main():
     ordered = featured + [c for c in cases if not c['featured_rank']]
     replacements = {
         '__TOTAL__': str(len(cases)), '__FIELDS__': str(len(counts)), '__FEATURE_COUNT__': str(len(featured)),
+        '__EMPIRICAL_CRISIS_FIELD__': EMPIRICAL_CRISIS,
         '__CARDS__': '\n'.join(map(render,ordered)),
         '__BUTTONS__': button(TOP,'Top 20',len(featured)) + button('', 'All fields',len(cases)) + ''.join(button(f,f,n) for f,n in counts.items()),
         '__FEATURES__': ''.join(f'<a href="#{anchor(c)}">{e(c["headline"])}<span>{e(c["venue"])} · {e(c["year"])}</span></a>' for c in featured[:3]),

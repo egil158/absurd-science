@@ -22,12 +22,12 @@
   {
     "file": "data/political_science.csv",
     "field": "Political Science",
-    "count": 124
+    "count": 128
   },
   {
     "file": "data/psychology.csv",
     "field": "Psychology",
-    "count": 444
+    "count": 543
   },
   {
     "file": "data/replication_across_fields.csv",

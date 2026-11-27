@@ -27,11 +27,11 @@
   {
     "file": "data/psychology.csv",
     "field": "Psychology",
-    "count": 430
+    "count": 444
   },
   {
     "file": "data/replication_across_fields.csv",
     "field": "Large-Scale Empirical Crisis",
-    "count": 21
+    "count": 25
   }
 ]
